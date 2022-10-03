@@ -1,0 +1,386 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'poppins', sans-serif;
+}
+html{
+    transition: all 5s ease-in-out;
+}
+body{
+    background: rgba(232, 225, 231, 0.969);
+}
+a{
+    text-decoration: none !important;
+}
+li{
+    list-style: none !important;
+}
+button{
+    display: inline-block;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #f44343;
+    color: #fff;
+    transition: all .5s ease;
+}
+button a{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+
+}
+button:hover{
+    background: transparent;
+    border: 1px solid #fff;
+}
+button:hover a{
+    color: #fff;
+}
+section{
+    min-height: 100vh;
+    width: 100%;
+}
+.hidden{
+    display: none !important;
+}
+.heading h2{
+    font-size: 2.4rem;
+    display: inline-block;
+    font-weight: 800;
+    word-spacing: 1px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+.heading h2::before{
+    content:attr(data-heading);
+    display: block;
+    font-size: 26px;
+    font-style: italic;
+    font-weight: 600;
+    color: #f44343;
+
+}
+/*  === navbar === */
+header{
+    background:rgba(0, 0, 0, 0.2);
+    position:absolute;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    transition:all .3s;
+}
+header.scrolled{
+    position: fixed;
+    background: #202020;
+    opacity: 0.6;
+}
+header:hover.scrolled{
+    opacity: 1;
+}
+.nav-link.active{
+    background-color:#f44343 !important;
+    border: transparent;
+}
+.nav-link:hover{
+    background-color:#f44343;
+}
+.nav-link{
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+/* === Home section === */
+.home{
+    background: url(../images/female-tourists-hand-have-happy-travel-map_1150-7411.webp);
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size:cover;
+    filter:brightness(-10px) !important;
+    backdrop-filter: brightness(-10px);
+    user-select:none;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    position: relative;
+}
+.home::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    opacity: 0.6;
+    z-index: -1;
+}
+.home h2{
+    line-height: 4.5rem;
+    font-weight: 800;
+    font-size: 4rem;
+    color: #fff;
+    text-transform: capitalize;
+
+}
+.home p{
+    font-size: 18px;
+    color: ghostwhite;
+}
+.home .row2{
+    position: absolute;
+    left: 0;
+    bottom: -40px;
+    width: 60%;
+    height: 100px;
+    z-index: 100;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 0 20px;
+    border-radius: 0 100px 10px 0;
+}
+.home .more-info{
+    display: flex;
+    margin: 0 10px;
+    padding: 3px 5px;
+
+}
+.home .more-info .icons{
+    padding: 5px 3px;
+    max-height: 60px;
+    max-width: 60px;
+    border: none;
+    border-radius: 5px;
+}
+.home .more-info .icons img{
+    height: 100%;
+    width: 100%;
+}
+.home .more-info .icons-info{
+    padding-left: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.home .more-info .icons-info h5{
+    font-size: 28px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0;
+}
+.home .more-info .icons-info p{
+    margin-bottom: 0;
+    font-size: 16px;
+}
+/* === About section === */
+.about-us .heading{
+    padding: 5px;
+    text-align: center;
+}
+.about-us .book-details .detail-item a{
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 22px;
+    font-size: 2.5rem;
+    color: #fff;
+    border-radius: 10px;
+    background: #f44343;
+}
+.about-us .book-card{
+    position: relative;
+    padding: 10px;
+    margin-left: 20px;
+    border-radius: 10px;
+    margin-top: 5px;
+    box-shadow: 3px -3px 10px rgba(0, 0, 0, 0.7);
+}
+.about-us .book-card .book-img{
+    min-height: 400px;
+    display: flex;
+    align-items:center;
+
+}
+.about-us .book-card .book-img img{
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+}
+.about-us .book-card .book-card-info{
+    margin-top: -10px;
+    padding: 0 10px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.about-us .book-card .book-card-info h4{
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: rgba(0, 0, 0, 0.701);
+    letter-spacing: 1.2px;
+}
+.about-us .book-card .book-card-info span{
+    color: #f44343;
+    font-size: 16px;
+}
+.about-us .book-card .book-card-info p{
+    margin-top: 10px;
+    font-size: 18px;
+    letter-spacing: 1.1px;
+}
+
+/* === Top Blogs === */
+.top-blogs .card{
+    margin: 5px 0;
+    min-width:calc(100% / 3 - 5px);
+    border-radius: 10px 10px !important;
+}
+.top-blogs .card:nth-child(even){
+    margin: 0 6px;
+}
+.top-blogs .card .card-header{
+    border: none;
+    padding: 0;
+    min-height: 350px;
+    position: relative;
+    margin: 0 !important;
+}
+.top-blogs .card .card-header img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px 5px 0 0;
+}
+
+/*  === Categoris Best Travell === */
+.best-travelling-info .travel-card{
+    border-radius: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    margin: 10px 0;
+}
+.best-travelling-info .travel-card:hover{
+    border: none;
+    transition: all 0.5s ease;
+    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.7);
+}
+.best-travelling-info .row .trending-card .trending-img{
+    min-height: 400px;
+    min-width: 400px;
+    padding: 10px 0;
+}
+.best-travelling-info .row .trending-card .trending-img img{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    border-radius: 12px;
+    box-shadow: -3px 3px 5px 5px rgba(2, 2, 2, 0.3);
+}
+.best-travelling-info .row .trending-card .trending-text h5{
+    font-size: 20px;
+    color: rgba(49, 47, 47, 0.637);
+    font-weight: bolder;
+    letter-spacing: 1.6px;
+}
+.best-travelling-info .row .trending-card .trending-text span{
+    font-size: 15px;
+    font-weight: 500;
+    color: rgba(2, 2, 2, 0.3);
+}
+
+/* ===online courses === */
+.online-courses .row .course-card{
+    border: 1px solid rgba(75, 69, 69, 0.573);
+    border-radius: 10px;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+    margin: 5px 0;
+}
+.online-courses .row .course-card:hover{
+    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.7);
+}
+.online-courses .row .course-card .card-image{
+    width: 100px;
+    height: 100px;
+    background: rgba(75, 69, 69, 0.573);
+    border-radius: 50%;
+    
+}
+
+/* ======footer ==== */
+footer .title h4{
+    position: relative;
+    padding: 5px 0;
+}
+footer .title h4::after{
+    position: absolute;
+    content: '';
+    width: 25%;
+    height: 3px;
+    background: #fff533;
+    top: 100%;
+    bottom: 0;
+    left: 0;
+}
+footer .text-info ul{
+    padding: 10px 0;
+}
+footer .text-info ul li{
+    margin: 10px 0;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bolder;
+}
+footer .text-info ul li:hover a{
+    padding-left: 15px;
+}
+footer .text-info ul li a{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: capitalize;
+    transition: all .4s ease-in-out;
+}
+footer .follow-us ul li{
+    background-color: rgb(141, 141, 255);
+    margin: 5px;
+    padding: 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+footer .follow-us li a {
+    font-size: 2rem;
+    color: #fff;
+    line-height: 20rem;
+}
+
+/* responsiveness */
+@media only screen and (min-width:768px) {
+    
+    footer .row
+    {
+        justify-content: space-between;
+        margin: 0 20px;
+    }
+}
+/* footer */
+
+
