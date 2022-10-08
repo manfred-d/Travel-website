@@ -13,6 +13,9 @@ html{
 body{
     background: rgba(232, 225, 231, 0.969);
 }
+body.hideScroll{
+    overflow: hidden;
+}
 a{
     text-decoration: none !important;
 }
@@ -82,6 +85,9 @@ header.scrolled{
 header:hover.scrolled{
     opacity: 1;
 }
+.nav{
+    position: relative;
+}
 .nav-link.active{
     background-color:#f44343 !important;
     border: transparent;
@@ -92,6 +98,54 @@ header:hover.scrolled{
 .nav-link{
     border-radius: 5px;
     margin: 0 5px;
+}
+.nav .toggler{
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position:absolute;
+    right: 5%;
+    top: 30px;
+    cursor: pointer;
+    /* transform: translateY(-50%); */
+}
+.nav .toggler span{
+    width: 25px;
+    height: 2px;
+    background: #202020;
+    position: relative;
+    transition: background .2s ease;
+}
+.nav .toggler span::before,
+.nav .toggler span::after{
+    content: '';
+    width: 25px;
+    height: 2px;
+    background-color: #202020;
+    position: absolute;
+    top: 0;
+    transition: all .5s ease-in-out;
+}
+.nav .toggler span::before{
+    left: 0;
+    transform: translateY(6px);
+}
+.nav .toggler span::after{
+    right: 0;
+    transform: translateY(-6px);
+}
+.nav .toggler.active span{
+    background: transparent;
+}
+.nav .toggler.active span::before{
+    transform: rotate(45deg);
+}
+.nav .toggler.active span::after{
+    transform: rotate(-45deg);
 }
 
 /* === Home section === */
@@ -371,16 +425,94 @@ footer .follow-us li a {
     color: #fff;
     line-height: 20rem;
 }
+/* footer */
 
 /* responsiveness */
-@media only screen and (min-width:768px) {
+@media only screen and (max-width:768px) {
+    body.active{
+        overflow-y: hidden;
+    }
+    header .nav .navbar-brand{
+        font-size: 2rem;
+    }
+    header .nav .nav-item{
+        display: none;
+    }
+    header.active .nav-item{
+        display: block;
+    }
+    header.active .nav{
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    header.active .nav .navbar-brand{
+        margin: 3rem 0;
+        font-size: 2rem;
+    }
+    header.active{
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        background: rgba(0, 0, 0, 0.9);
+    }
     
+    header.active .nav-item .nav-tabs{
+        justify-content: center;
+        align-items: center;
+        flex-direction: column !important;
+    }
+    .nav .nav-item .nav-tabs li{
+        margin: 1rem 0;
+    }
+    .home .row h2{
+        font-size: 3.5rem;
+        line-height: 4rem;
+    }
+    .home .row p{
+        font-size: 16px;
+    }
+    .home .row2{
+        width: 100%;
+        border-radius: 0;
+    }
+    .home .more-info{
+        text-overflow:clip;
+    }
+    .home .more-info .icons-info h5{
+        font-size: 18px;
+    }
+    .home .more-info .icons-info p{
+        font-size: 12px;
+        text-align: start;
+    }
     footer .row
     {
         justify-content: space-between;
         margin: 0 20px;
     }
 }
-/* footer */
-
+@media only screen and (min-width:769px)and (max-width:1168px){
+    header .nav .navbar-brand{
+        margin: 0 !important;
+        font-size: 1.3rem;
+    }
+    .nav .toggler{
+        display: none;
+    }
+    header .nav-item{
+        margin: 0 !important;
+        font-size: 1.3rem;
+    }
+    header .nav .nav-link a{
+        font-size: 16px;
+    }
+    .home .row h2{
+        font-size: 3rem;
+        line-height: 3.5rem;
+    }
+    .home .row2{
+        width: 80%;
+    }
+}
 
